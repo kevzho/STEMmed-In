@@ -4,32 +4,36 @@
     <title>STEMmed In</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: -apple-system, system-ui, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; line-height: 1.6; }
-        h1 { font-size: 2.5rem; color: #2563eb; }
-        .motto { color: #4b5563; font-size: 1.2rem; border-left: 4px solid #2563eb; padding-left: 20px; margin: 20px 0; }
-        .form-group { margin: 30px 0; }
-        input { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; }
-        button { background: #2563eb; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; width: 100%; }
-        button:hover { background: #1d4ed8; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>STEMmed In</h1>
-    <div class="motto">Bringing STEM to everyone, everywhere.</div>
-    <p>A weekly newsletter for curious minds—from biology to coding, chemistry to data science.</p>
-    
-    <form method="post" action="https://list.stemmedin.com/subscription/form" class="listmonk-form">
-        <div>
-            <h3>Subscribe</h3>
+    <main class="page-wrap">
+        <section class="card hero-card">
+            <nav class="top-nav">
+                <a class="nav-link nav-link-current" href="index.html">Home</a>
+                <a class="nav-link" href="applications.html">Applications</a>
+            </nav>
+            <p class="eyebrow">STEMmed In Newsletter</p>
+            <h1>Bringing STEM to everyone, everywhere.</h1>
+            <p class="hero-copy">A weekly newsletter for curious minds, from biology to coding, chemistry to data science.</p>
+        </section>
+
+        <section class="card">
+            <h2>Subscribe</h2>
+            <p class="section-copy">Get one clear, practical email each week.</p>
+            <form method="post" action="https://list.stemmedin.com/subscription/form" class="listmonk-form stacked-form">
             <input type="hidden" name="nonce" />
             <input type="hidden" name="l" value="217f649c-b753-4c29-b694-c31c5a05aa94" />
 
-            <p><input type="email" name="email" required placeholder="E-mail" /></p>
-            <p><input type="text" name="name" placeholder="Name (optional)" /></p>
+                <label class="label" for="email">Email</label>
+                <input id="email" type="email" name="email" required placeholder="you@example.com" />
 
-            <input type="submit" value="Subscribe" />
-        </div>
-    </form>
+                <label class="label" for="name">Name</label>
+                <input id="name" type="text" name="name" placeholder="Optional" />
+
+                <input class="btn btn-primary" type="submit" value="Subscribe" />
+            </form>
+        </section>
+    </main>
 </body>
 </html>

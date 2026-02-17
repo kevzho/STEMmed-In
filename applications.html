@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply - STEMmed In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page-wrap">
+        <section class="card hero-card">
+            <nav class="top-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link nav-link-current" href="applications.html">Applications</a>
+            </nav>
+            <p class="eyebrow">Join Our Team</p>
+            <h1>Help us create better STEM education.</h1>
+            <p class="hero-copy">We're looking for passionate educators and writers to contribute to our newsletter community.</p>
+        </section>
+
+        <section class="card">
+            <h2>Choose Your Role</h2>
+            <p class="section-copy">What interests you?</p>
+            
+            <div class="role-grid">
+                <label class="option-card">
+                    <input type="radio" name="role" value="guest-writer" onchange="showSection('guest-writer')">
+                    <div class="option-content">
+                        <p class="option-title">Guest Writer</p>
+                        <p class="option-text">Write articles for our newsletter</p>
+                    </div>
+                </label>
+                
+                <label class="option-card">
+                    <input type="radio" name="role" value="editor" onchange="showSection('editor')">
+                    <div class="option-content">
+                        <p class="option-title">Editor</p>
+                        <p class="option-text">Help curate and review content</p>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <section id="guest-writer" class="application-section" hidden>
+            <h3>Guest Writer Application</h3>
+            <p class="section-copy">Tell us about your STEM expertise and writing experience.</p>
+            
+            <form method="post" action="https://list.stemmedin.com/subscription/form" class="stacked-form">
+                <input type="hidden" name="nonce" />
+                <input type="hidden" name="l" value="217f649c-b753-4c29-b694-c31c5a05aa94" />
+
+                <label class="label" for="writer-email">Email</label>
+                <input id="writer-email" type="email" name="email" required placeholder="you@example.com" />
+
+                <label class="label" for="writer-name">Full Name</label>
+                <input id="writer-name" type="text" name="name" required placeholder="Your name" />
+
+                <label class="label" for="writer-expertise">Areas of Expertise</label>
+                <textarea id="writer-expertise" name="expertise" required placeholder="e.g., Biology, Data Science, Machine Learning..."></textarea>
+
+                <label class="label" for="writer-portfolio">Writing Portfolio or Website (Optional)</label>
+                <input id="writer-portfolio" type="url" name="portfolio" placeholder="https://example.com" />
+
+                <label class="label" for="writer-bio">Tell us about yourself</label>
+                <textarea id="writer-bio" name="bio" required placeholder="Share your background and why you're interested in contributing..."></textarea>
+
+                <input class="btn btn-primary" type="submit" value="Submit Application" />
+            </form>
+        </section>
+
+        <section id="editor" class="application-section" hidden>
+            <h3>Editor Application</h3>
+            <p class="section-copy">Help us maintain quality and clarity across our content.</p>
+            
+            <form method="post" action="https://list.stemmedin.com/subscription/form" class="stacked-form">
+                <input type="hidden" name="nonce" />
+                <input type="hidden" name="l" value="217f649c-b753-4c29-b694-c31c5a05aa94" />
+
+                <label class="label" for="editor-email">Email</label>
+                <input id="editor-email" type="email" name="email" required placeholder="you@example.com" />
+
+                <label class="label" for="editor-name">Full Name</label>
+                <input id="editor-name" type="text" name="name" required placeholder="Your name" />
+
+                <label class="label" for="editor-experience">Editing Experience</label>
+                <textarea id="editor-experience" name="experience" required placeholder="Describe your experience with editing or content review..."></textarea>
+
+                <label class="label" for="editor-focus">Focus Areas</label>
+                <input id="editor-focus" type="text" name="focus" required placeholder="e.g., Science writing, Technical clarity, Accessibility..." />
+
+                <label class="label" for="editor-availability">Weekly Availability</label>
+                <select id="editor-availability" name="availability" required>
+                    <option value="">Select an option</option>
+                    <option value="1-3">1-3 hours</option>
+                    <option value="3-5">3-5 hours</option>
+                    <option value="5-10">5-10 hours</option>
+                    <option value="10+">10+ hours</option>
+                </select>
+
+                <input class="btn btn-primary" type="submit" value="Submit Application" />
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function showSection(roleId) {
+            const guestWriter = document.getElementById('guest-writer');
+            const editor = document.getElementById('editor');
+            
+            if (roleId === 'guest-writer') {
+                guestWriter.hidden = false;
+                editor.hidden = true;
+            } else if (roleId === 'editor') {
+                guestWriter.hidden = true;
+                editor.hidden = false;
+            }
+        }
+    </script>
+</body>
+</html>
