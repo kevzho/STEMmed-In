@@ -57,6 +57,26 @@ body {
   transition: background 0.28s ease, color 0.28s ease;
 }
 
+body::before {
+  content: '';
+  position: fixed; /* fixed so it doesn't scroll with the page */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('img/overlay-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.03; /* lower than the card since it covers everything */
+  pointer-events: none;
+  z-index: 0;
+}
+
+body[data-theme="dark"]::before {
+  opacity: 0.10;
+}
+
 .page-wrap {
   width: min(1040px, 92vw);
   margin: 3.2rem auto 4.4rem;
@@ -75,6 +95,43 @@ body {
 .newsletter-card {
   display: flex;
   justify-content: flex-start;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Image overlay */
+.newsletter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/img/overlay.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity:0.2;  /* Adjust to your liking */
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;  /* Matches card's border radius */
+}
+
+/* Ensure content stays above overlay */
+.newsletter-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Optional: Dark mode overlay adjustment (if you have theme.js) */
+[data-theme="dark"] .newsletter-card::before {
+  background-image: url('img/overlay.png'), linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-card {
