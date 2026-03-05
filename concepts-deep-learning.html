@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Part 3: Deep Learning - STEMmed In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="theme.js"></script>
+</head>
+<body>
+    <main class="page-wrap">
+        <section class="card hero-card">
+            <nav class="top-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="concepts.html">Concepts Explained</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="contributor-applications.html">Contribute</a>
+                <button class="theme-toggle" type="button" data-theme-toggle>Light Mode</button>
+            </nav>
+            <p class="eyebrow">Part 3</p>
+            <h1>Diving Into Deep Learning</h1>
+            <p class="hero-copy">This page explains neural networks as clearly as possible for first-time learners, while still covering the pieces used in modern models.</p>
+            <div class="subpage-nav">
+                <a class="subpage-link" href="concepts.html">Back to Roadmap</a>
+                <a class="subpage-link" href="concepts-ml-core.html">Previous: Core ML</a>
+                <a class="subpage-link" href="concepts-advanced-applied.html">Next: Advanced + Applied</a>
+            </div>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Quick Glossary (Deep Learning Terms)</h2>
+            <div class="glossary-grid">
+                <article class="glossary-item">
+                    <h3>Weight</h3>
+                    <p>A learned number that controls how strongly an input matters.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Activation</h3>
+                    <p>A function that adds non-linearity so networks can model complex patterns.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Loss</h3>
+                    <p>A score of how wrong the model currently is.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Backpropagation</h3>
+                    <p>The process of sending error information backward to update weights.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Neural Networks from Zero</h2>
+            <div class="learning-block">
+                <h3>What a Neural Network Is</h3>
+                <p>A neural network is a stack of mathematical functions that transforms input into output. Each layer extracts more useful structure from the previous one. With enough data and training, this layered structure can represent very complex relationships.</p>
+                <p class="analogy"><strong>Analogy:</strong> Think of a newsroom. First team collects raw facts, second team organizes themes, third team writes conclusions. Each layer refines information.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Neurons, Weights, and Biases</h3>
+                <p>A neuron computes a weighted sum of inputs, adds a bias, then applies an activation. Weights control importance; bias shifts the decision boundary. During training, these numbers are adjusted so predictions improve.</p>
+                <p class="math-note">Single neuron: <code>z = w1*x1 + w2*x2 + ... + b</code>, output <code>a = activation(z)</code>.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Activation Functions</h3>
+                <p>Activations add nonlinearity, which is essential. Without them, many layers collapse to an effectively linear model. ReLU is common due to efficient gradients, while sigmoid/tanh are still useful in specific outputs and recurrent settings.</p>
+                <p class="analogy"><strong>Analogy:</strong> Activations are gatekeepers deciding when a signal is strong enough to pass through.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="diagram-grid">
+                    <img class="concept-image concept-image-large" src="img/single-neuron.png" alt="Single neuron equation and signal flow diagram." />
+                    <img class="concept-image concept-image-large" src="img/layered-network.png" alt="Layered neural network with input, hidden, and output layers." />
+                </div>
+                <figcaption>Left: one neuron in detail. Right: how many neurons stack into a full network.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Forward Pass, Loss, Backpropagation, Gradient Descent</h2>
+            <div class="learning-block">
+                <h3>Forward Pass</h3>
+                <p>Input data flows through each layer until the model outputs a prediction. Nothing is updated yet; this is only prediction generation.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Loss Function</h3>
+                <p>The loss measures how wrong the prediction is. Different tasks use different losses: mean squared error for regression, cross-entropy for classification.</p>
+                <p class="analogy"><strong>Analogy:</strong> Loss is a scoreboard. The model practices until the score improves.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Backpropagation</h3>
+                <p>Backpropagation applies the chain rule to compute how each weight contributed to the final error. It sends error signals backward through layers so each parameter gets a useful update direction.</p>
+                <p class="math-note"><strong>Core idea:</strong> Reuse intermediate derivatives efficiently. This is what makes deep learning computationally feasible.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Gradient Descent Variants</h3>
+                <p>After gradients are computed, an optimizer updates parameters. SGD, Momentum, RMSProp, and Adam differ in how they scale and smooth updates, affecting training speed and stability.</p>
+                <p class="analogy"><strong>Analogy:</strong> Backprop tells you slope direction; optimizer decides step style: cautious, fast, or adaptive.</p>
+            </div>
+            <figure class="image-slot">
+                <img class="concept-image concept-image-xl" src="img/forward-backward-pass.png" alt="Forward pass and backward pass gradient flow through a neural network." />
+                <figcaption>Forward pass makes predictions; backward pass sends gradients back to update weights.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Architectures and Why They Exist</h2>
+            <div class="learning-block">
+                <h3>CNNs for Images</h3>
+                <p>Convolutions share weights across local regions, making CNNs efficient and effective for spatial data. Pooling and depth help detect patterns from simple edges to complex objects.</p>
+                <p class="analogy"><strong>Analogy:</strong> Reading a map block by block, then combining local clues into a full route.</p>
+            </div>
+            <div class="learning-block">
+                <h3>RNN / LSTM / GRU for Sequences</h3>
+                <p>Sequence models keep memory of prior steps. LSTM/GRU add gates to decide what to remember, what to forget, and what to output, improving long-range pattern capture.</p>
+                <p class="analogy"><strong>Analogy:</strong> While listening to a sentence, you keep important words in mind and drop irrelevant ones.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Transformers for Long Context</h3>
+                <p>Transformers use attention so each token can look at other relevant tokens directly. This avoids strict sequential bottlenecks and scales well to long contexts and large datasets.</p>
+                <p class="math-note">Self-attention builds weighted relationships among tokens; positional encoding injects order information.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="diagram-grid">
+                    <img class="concept-image concept-image-large" src="img/cnn-feature-maps.png" alt="CNN feature maps showing how convolutional layers detect visual patterns." />
+                    <img class="concept-image concept-image-large" src="img/lstm-gates.jpeg" alt="LSTM gates diagram showing forget, input, and output gate behavior." />
+                    <img class="concept-image concept-image-large" src="img/transformer-attention.png" alt="Transformer attention map showing token-to-token attention weights." />
+                </div>
+                <figcaption>CNNs extract image features, LSTMs manage sequence memory, and transformers use attention for long context.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Modern Directions: Generative AI, Autoencoders, GANs, GNNs</h2>
+            <div class="learning-block">
+                <h3>Generative AI</h3>
+                <p>Generative models learn data distributions and sample new outputs. In practice, they are used for drafting text, synthetic images, design ideation, simulation acceleration, and data augmentation.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Autoencoders</h3>
+                <p>An encoder compresses input into latent space; a decoder reconstructs it. This supports compression, denoising, anomaly detection, and representation learning.</p>
+            </div>
+            <div class="learning-block">
+                <h3>GANs</h3>
+                <p>GANs train a generator against a discriminator. The generator tries to fool the discriminator; the discriminator learns to detect fakes. This game can produce highly realistic outputs when stable.</p>
+                <p class="analogy"><strong>Analogy:</strong> A forger and detective improve together; each round forces the other to get better.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Graph Neural Networks</h3>
+                <p>GNNs operate on nodes and edges, passing messages through graph structure. They are powerful for molecular prediction, recommendation graphs, and fraud detection networks.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="diagram-grid">
+                    <img class="concept-image concept-image-large" src="img/latent-space.png" alt="Latent space visualization for representation learning." />
+                    <img class="concept-image concept-image-large" src="img/gan-training.png" alt="GAN training loop between generator and discriminator." />
+                </div>
+                <figcaption>Latent space helps represent structure compactly; GAN training shows generator-versus-discriminator learning.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card">
+            <div class="subpage-nav">
+                <a class="subpage-link" href="concepts.html">Back to Roadmap</a>
+                <a class="subpage-link" href="concepts-ml-core.html">Previous: Core ML</a>
+                <a class="subpage-link" href="concepts-advanced-applied.html">Next: Advanced + Applied</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

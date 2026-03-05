@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Domain Foundations - STEMmed In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="theme.js"></script>
+</head>
+<body>
+    <main class="page-wrap">
+        <section class="card hero-card">
+            <nav class="top-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="concepts.html">Concepts Explained</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="contributor-applications.html">Contribute</a>
+                <button class="theme-toggle" type="button" data-theme-toggle>Light Mode</button>
+            </nav>
+            <p class="eyebrow">Domain Baselines</p>
+            <h1>Physics, Medicine, Finance, Bio/Chem</h1>
+            <p class="hero-copy">These are the essential baseline concepts that make computational work in each domain meaningful and responsible.</p>
+            <div class="subpage-nav">
+                <a class="subpage-link" href="concepts.html">Back to Roadmap</a>
+                <a class="subpage-link" href="concepts-advanced-applied.html">Previous: Advanced + Applied</a>
+            </div>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Quick Glossary (Domain Work)</h2>
+            <div class="glossary-grid">
+                <article class="glossary-item">
+                    <h3>Inverse Problem</h3>
+                    <p>Working backward from effects you observe to causes you cannot directly see.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Calibration</h3>
+                    <p>Making sure model confidence lines up with real-world success rates.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Backtest</h3>
+                    <p>Testing a finance strategy on historical data before live use.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Representation</h3>
+                    <p>The format used to encode domain objects like molecules, signals, or patient records.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Physics Foundations</h2>
+            <div class="learning-block">
+                <h3>Math and Modeling Baseline</h3>
+                <p>Computational physics depends on linear algebra, differential equations, and numerical methods. These tools let you represent physical laws and simulate systems that are too complex to solve analytically.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Uncertainty and Inverse Problems</h3>
+                <p>Many tasks in physics infer hidden causes from observed effects, such as recovering material properties from sensor readings. This is an inverse problem and is usually uncertain. Probabilistic modeling and uncertainty quantification are therefore core requirements.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder">Image Spot: Forward vs Inverse Problem Diagram</div>
+                <figcaption>Show how known parameters produce measurements (forward) and how measurements are used to estimate unknown parameters (inverse).</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Medicine Foundations</h2>
+            <div class="learning-block">
+                <h3>Clinical Evidence Basics</h3>
+                <p>Medical AI must align with clinical evidence standards. Understand trial design, inclusion/exclusion criteria, endpoints, and how confounding variables can mislead conclusions.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Diagnostic Metrics and Risk</h3>
+                <p>Sensitivity and specificity measure different failure types. In many settings, false negatives are costly, so recall-oriented operating points may be preferred. Calibration is also critical when probabilities guide treatment decisions.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Data Governance and Equity</h3>
+                <p>Protected health information requires strict privacy safeguards. Bias audits are mandatory because uneven representation can create harmful performance gaps across populations.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder">Image Spot: Confusion Matrix + Calibration Curve</div>
+                <figcaption>Pair a confusion matrix with a calibration plot to teach performance and reliability together.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Finance Foundations</h2>
+            <div class="learning-block">
+                <h3>Time-Series Thinking</h3>
+                <p>Financial data is sequential and non-stationary. Regimes change, correlations shift, and noise is high. Models need robust validation that respects time order to avoid leakage.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Risk, Return, and Constraints</h3>
+                <p>A model with high average return can still be unacceptable if drawdowns or volatility are too high. Portfolio design balances expected return with risk limits, transaction costs, and liquidity constraints.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Backtesting Discipline</h3>
+                <p>Backtests can look strong for the wrong reasons. You must control for look-ahead bias, survivorship bias, and overfitting to historical noise.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder">Image Spot: Backtest Timeline and Leakage Warning</div>
+                <figcaption>Use a timeline visual to show train/validation/test windows and where leakage often occurs.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Bio/Chem Foundations</h2>
+            <div class="learning-block">
+                <h3>Biological and Chemical Representations</h3>
+                <p>In computational biology, sequences, expression matrices, and interaction networks are common data forms. In chemistry, molecules may be represented as graphs, strings, or fingerprints. Representation choice heavily shapes model performance.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Dynamics, Thermodynamics, and Noise</h3>
+                <p>Biological systems are dynamic and noisy, so models must account for experimental variability. In chemistry, kinetics and thermodynamics provide physical constraints that improve plausibility.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Practical Goal: Decision Support, Not Just Prediction</h3>
+                <p>Good models accelerate hypothesis generation, prioritize experiments, and reduce search space. The value is in guiding better experiments, not replacing them blindly.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder">Image Spot: Molecule Graph + Sequence Pipeline</div>
+                <figcaption>Add one panel for molecular graph representation and one for sequence-to-prediction workflow.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card">
+            <div class="subpage-nav">
+                <a class="subpage-link" href="concepts.html">Back to Roadmap</a>
+                <a class="subpage-link" href="concepts-advanced-applied.html">Previous: Advanced + Applied</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

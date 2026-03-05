@@ -57,6 +57,24 @@ body {
   transition: background 0.28s ease, color 0.28s ease;
 }
 
+/* Home page differentiation without changing the color palette. */
+body.home-page .card {
+  border-width: 2px;
+  box-shadow: var(--shadow), inset 0 0 0 1px color-mix(in srgb, var(--line) 72%, transparent);
+}
+
+body.home-page .hero-card {
+  position: relative;
+}
+
+body.home-page .hero-card::after {
+  content: '';
+  position: absolute;
+  inset: 0.72rem;
+  border: 1px dashed color-mix(in srgb, var(--line) 86%, transparent);
+  pointer-events: none;
+}
+
 body::before {
   content: '';
   position: fixed; /* fixed so it doesn't scroll with the page */
@@ -75,6 +93,11 @@ body::before {
 
 body[data-theme="dark"]::before {
   opacity: 0.10;
+}
+
+body[data-theme="light"]::before {
+  opacity: 0.08;
+  filter: saturate(1.08) contrast(1.04);
 }
 
 .page-wrap {
@@ -111,7 +134,7 @@ body[data-theme="dark"]::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity:0.2;  /* Adjust to your liking */
+  opacity: 0.2;  /* Adjust to your liking */
   pointer-events: none;
   z-index: 1;
   border-radius: inherit;  /* Matches card's border radius */
@@ -132,6 +155,10 @@ body[data-theme="dark"]::before {
   );
   background-size: cover;
   background-position: center;
+}
+
+[data-theme="light"] .newsletter-card::before {
+  opacity: 0.32;
 }
 
 .hero-card {
@@ -210,6 +237,35 @@ textarea,
   background: color-mix(in srgb, var(--brand) 18%, transparent);
   color: var(--text-main);
   border-color: color-mix(in srgb, var(--brand) 38%, transparent);
+}
+
+.corner-app-button {
+  position: fixed;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  min-width: 10.2rem;
+  height: 3.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--brand) 45%, var(--line));
+  background: color-mix(in srgb, var(--card-strong) 90%, transparent);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  z-index: 5;
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.corner-app-button:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--brand) 78%, var(--line));
+  background: color-mix(in srgb, var(--brand) 16%, var(--card-strong));
 }
 
 .theme-toggle {
@@ -415,6 +471,282 @@ textarea {
   animation: slideIn 0.3s ease;
 }
 
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.concept-card {
+  border: 1px solid var(--line);
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  background: color-mix(in srgb, var(--card-strong) 90%, transparent);
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.concept-card:hover {
+  border-color: color-mix(in srgb, var(--brand) 52%, var(--line));
+  transform: translateY(-1px);
+}
+
+.concept-title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.94rem;
+  color: var(--text-main);
+}
+
+.concept-text {
+  margin: 0.5rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.48;
+  font-size: 0.93rem;
+}
+
+.tip-list p {
+  margin: 0 0 0.65rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.tip-list p:last-child {
+  margin-bottom: 0;
+}
+
+.concept-section details {
+  border: 1px solid var(--line);
+  padding: 0.8rem 1rem;
+  margin: 0 0 0.68rem;
+  background: color-mix(in srgb, var(--card-strong) 88%, transparent);
+}
+
+.concept-section details:last-child {
+  margin-bottom: 0;
+}
+
+.concept-section summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  color: var(--text-main);
+}
+
+.concept-section details p {
+  margin: 0.7rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.subpage-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.subpage-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.52rem 0.82rem;
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: color-mix(in srgb, var(--card-strong) 82%, transparent);
+  transition: border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.subpage-link:hover {
+  border-color: color-mix(in srgb, var(--brand) 58%, var(--line));
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+.learning-block {
+  margin-bottom: 1.1rem;
+}
+
+.learning-block:last-child {
+  margin-bottom: 0;
+}
+
+.learning-block h3 {
+  margin: 0 0 0.48rem;
+  font-size: 1.05rem;
+}
+
+.learning-block p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.62;
+}
+
+.analogy {
+  margin-top: 0.6rem !important;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  background: color-mix(in srgb, var(--accent) 9%, var(--card-strong));
+}
+
+.math-note {
+  margin-top: 0.6rem !important;
+  padding: 0.6rem 0.8rem;
+  border-left: 3px solid color-mix(in srgb, var(--brand) 70%, transparent);
+  background: color-mix(in srgb, var(--brand) 7%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.learning-list {
+  margin: 0.68rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.58;
+}
+
+.learning-list li {
+  margin: 0.18rem 0;
+}
+
+.glossary-grid,
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.7rem;
+}
+
+.glossary-item,
+.resource-card {
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--card-strong) 88%, transparent);
+  padding: 0.9rem 1rem;
+}
+
+.glossary-item h3,
+.resource-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.96rem;
+}
+
+.glossary-item p,
+.resource-card p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.resource-list {
+  margin: 0.65rem 0 0;
+  padding-left: 1rem;
+}
+
+.resource-list li {
+  margin: 0.24rem 0;
+}
+
+.resource-list a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.resource-list a:hover {
+  text-decoration: underline;
+}
+
+.image-slot {
+  margin: 1.4rem 0 0;
+  padding: 0.4rem;
+}
+
+.image-placeholder {
+  width: 100%;
+  min-height: 320px;
+  border: 1px dashed color-mix(in srgb, var(--brand) 46%, var(--line));
+  background: color-mix(in srgb, var(--brand) 6%, var(--card-strong));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.8rem;
+  font-family: var(--font-mono);
+  color: color-mix(in srgb, var(--brand) 62%, var(--text-main));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+}
+
+.image-placeholder.rendered-diagram {
+  padding: 0;
+  display: block;
+  text-transform: none;
+  letter-spacing: normal;
+  min-height: 0;
+}
+
+.image-placeholder.rendered-diagram svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: var(--text-main);
+}
+
+.image-placeholder.image-large {
+  min-height: 480px;
+}
+
+.image-placeholder.image-xl {
+  min-height: 620px;
+}
+
+.diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 0.8rem;
+}
+
+.diagram-grid-stack {
+  grid-template-columns: 1fr !important;
+}
+
+.image-slot figcaption {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.concept-image {
+  width: 100%;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid color-mix(in srgb, var(--brand) 55%, var(--line));
+  outline: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 8px;
+  padding: 0.65rem;
+  background: color-mix(in srgb, var(--card-strong) 92%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--line) 75%, transparent) inset,
+    0 8px 20px color-mix(in srgb, var(--bg-base) 55%, transparent);
+}
+
+.concept-image-large {
+  min-height: 0;
+}
+
+.concept-image-xl {
+  min-height: 0;
+}
+
 .application-section[hidden] {
   display: none;
 }
@@ -480,6 +812,14 @@ textarea {
     order: 3;
     width: 100%;
     margin-left: 0;
+  }
+
+  .corner-app-button {
+    min-width: 7.8rem;
+    height: 2.7rem;
+    font-size: 0.62rem;
+    left: 0.9rem;
+    bottom: 0.9rem;
   }
 }
 

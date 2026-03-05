@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Apply - STEMmed In</title>
+    <title>Applications - STEMmed In</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
@@ -13,111 +13,140 @@
         <section class="card hero-card">
             <nav class="top-nav">
                 <a class="nav-link" href="index.html">Home</a>
-                <a class="nav-link nav-link-current" href="applications.html">Applications</a>
+                <a class="nav-link" href="concepts.html">Concepts Explained</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="contributor-applications.html">Contribute</a>
                 <button class="theme-toggle" type="button" data-theme-toggle>Light Mode</button>
             </nav>
-            <p class="eyebrow">Join Our Team</p>
-            <h1>Help us deepen STEM education.</h1>
-            <p class="hero-copy">We're looking for passionate educators and writers to contribute to our newsletter community.</p>
+            <p class="eyebrow">Real-World Use Cases</p>
+            <h1>AI/ML Applications Across Fields</h1>
+            <p class="hero-copy">This page answers one practical question: "Where is this stuff used in real life?" We keep it simple and concrete, with examples you can immediately understand.</p>
         </section>
 
-        <section class="card">
-            <h2>Choose Your Role</h2>
-            <p class="section-copy">What interests you?</p>
-            
-            <div class="role-grid">
-                <label class="option-card">
-                    <input type="radio" name="role" value="guest-writer" onchange="showSection('guest-writer')">
-                    <div class="option-content">
-                        <p class="option-title">Guest Writer</p>
-                        <p class="option-text">Write articles for our newsletter</p>
-                    </div>
-                </label>
-                
-                <label class="option-card">
-                    <input type="radio" name="role" value="editor" onchange="showSection('editor')">
-                    <div class="option-content">
-                        <p class="option-title">Editor</p>
-                        <p class="option-text">Help curate and review content</p>
-                    </div>
-                </label>
+        <section class="card concept-section">
+            <h2>Beginner Glossary for Applications</h2>
+            <div class="glossary-grid">
+                <article class="glossary-item">
+                    <h3>Inference</h3>
+                    <p>When a trained model makes a prediction on new data.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Workflow</h3>
+                    <p>The sequence of steps teams use to get real outcomes from a model.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Decision Support</h3>
+                    <p>Model helps a person make a better decision, instead of replacing them entirely.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Monitoring</h3>
+                    <p>Tracking model quality after launch so it does not silently degrade.</p>
+                </article>
             </div>
         </section>
 
-        <section id="guest-writer" class="application-section" hidden>
-            <h3>Guest Writer Application</h3>
-            <p class="section-copy">Tell us about your STEM expertise and writing experience.</p>
-            
-            <form method="post" action="https://list.stemmedin.com/subscription/form" class="stacked-form">
-                <input type="hidden" name="nonce" />
-                <input type="hidden" name="l" value="217f649c-b753-4c29-b694-c31c5a05aa94" />
-
-                <label class="label" for="writer-email">Email</label>
-                <input id="writer-email" type="email" name="email" required placeholder="you@example.com" />
-
-                <label class="label" for="writer-name">Full Name</label>
-                <input id="writer-name" type="text" name="name" required placeholder="Your name" />
-
-                <label class="label" for="writer-expertise">Areas of Expertise</label>
-                <textarea id="writer-expertise" name="expertise" required placeholder="e.g., Biology, Data Science, Machine Learning..."></textarea>
-
-                <label class="label" for="writer-portfolio">Writing Portfolio or Website (Optional)</label>
-                <input id="writer-portfolio" type="url" name="portfolio" placeholder="https://example.com" />
-
-                <label class="label" for="writer-bio">Tell us about yourself</label>
-                <textarea id="writer-bio" name="bio" required placeholder="Share your background and why you're interested in contributing..."></textarea>
-
-                <input class="btn btn-primary" type="submit" value="Submit Application" />
-            </form>
+        <section class="card concept-section">
+            <h2>Medicine and Healthcare</h2>
+            <div class="learning-block">
+                <h3>Where It Helps</h3>
+                <p>AI can help triage medical images, summarize clinical notes, predict readmission risk, and flag unusual patterns in patient monitoring streams. In most settings, it supports clinicians instead of replacing them.</p>
+                <p class="analogy"><strong>Analogy:</strong> Think of the model as an extra pair of eyes that never gets tired, while the doctor remains the decision-maker.</p>
+            </div>
+            <div class="learning-block">
+                <h3>What Makes It Hard</h3>
+                <p>Medical data is noisy, privacy-sensitive, and often biased by site-specific processes. A model that looks strong in one hospital may fail in another if patient populations differ.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder image-large">Diagram Space: Clinical AI Workflow (Input -> Model -> Clinician Decision -> Feedback)</div>
+                <figcaption>Include where humans review predictions and where performance is re-audited.</figcaption>
+            </figure>
         </section>
 
-        <section id="editor" class="application-section" hidden>
-            <h3>Editor Application</h3>
-            <p class="section-copy">Help us maintain quality and clarity across our content.</p>
-            
-            <form method="post" action="https://list.stemmedin.com/subscription/form" class="stacked-form">
-                <input type="hidden" name="nonce" />
-                <input type="hidden" name="l" value="217f649c-b753-4c29-b694-c31c5a05aa94" />
+        <section class="card concept-section">
+            <h2>Finance</h2>
+            <div class="learning-block">
+                <h3>Where It Helps</h3>
+                <p>Common use cases include fraud detection, risk scoring, anti-money-laundering alerts, customer churn prediction, and portfolio support tools.</p>
+                <p class="analogy"><strong>Analogy:</strong> In fraud detection, the model is like a vigilant security guard scanning thousands of transactions and highlighting suspicious ones for analysts.</p>
+            </div>
+            <div class="learning-block">
+                <h3>What Makes It Hard</h3>
+                <p>Financial patterns shift with market regimes and user behavior. A strategy that worked in last year's data can degrade fast. Strong validation and monitoring are non-negotiable.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder image-large">Diagram Space: Fraud/Risk Pipeline with Alerts and Human Review</div>
+                <figcaption>Show feedback loop: analyst outcomes return to training data for retraining.</figcaption>
+            </figure>
+        </section>
 
-                <label class="label" for="editor-email">Email</label>
-                <input id="editor-email" type="email" name="email" required placeholder="you@example.com" />
+        <section class="card concept-section">
+            <h2>Biology and Chemistry</h2>
+            <div class="learning-block">
+                <h3>Where It Helps</h3>
+                <p>AI is used for sequence analysis, protein structure tasks, molecule property prediction, lead prioritization, and experiment recommendation.</p>
+                <p class="analogy"><strong>Analogy:</strong> Instead of testing every possible molecule in the lab, models help narrow to a smarter shortlist.</p>
+            </div>
+            <div class="learning-block">
+                <h3>What Makes It Hard</h3>
+                <p>Wet-lab data can be sparse, expensive, and noisy. Predictions need experimental confirmation, so the goal is often "better experiment planning" not blind automation.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder image-large">Diagram Space: Molecule/Sequence -> Model -> Candidate Ranking -> Lab Validation</div>
+                <figcaption>Show clearly where computational prediction hands off to real experiments.</figcaption>
+            </figure>
+        </section>
 
-                <label class="label" for="editor-name">Full Name</label>
-                <input id="editor-name" type="text" name="name" required placeholder="Your name" />
+        <section class="card concept-section">
+            <h2>Physics and Engineering</h2>
+            <div class="learning-block">
+                <h3>Where It Helps</h3>
+                <p>Applications include surrogate models for simulation, sensor anomaly detection, inverse problems, and control optimization in complex systems.</p>
+                <p class="analogy"><strong>Analogy:</strong> A surrogate model is like a fast "stand-in" simulator that gives quick approximate answers before expensive full simulation.</p>
+            </div>
+            <div class="learning-block">
+                <h3>What Makes It Hard</h3>
+                <p>Physical systems often have strict constraints. Predictions must remain physically plausible, not just statistically accurate.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder image-large">Diagram Space: Simulation Loop + ML Surrogate + Physics Constraints</div>
+                <figcaption>Include where domain equations are used to validate model outputs.</figcaption>
+            </figure>
+        </section>
 
-                <label class="label" for="editor-experience">Editing Experience</label>
-                <textarea id="editor-experience" name="experience" required placeholder="Describe your experience with editing or content review..."></textarea>
+        <section class="card concept-section">
+            <h2>Cross-Domain Pattern You Will See Everywhere</h2>
+            <div class="learning-block">
+                <p>Whether in medicine, finance, biology, or physics, the pattern is similar:</p>
+                <ul class="learning-list">
+                    <li>1. Define the decision you are trying to improve.</li>
+                    <li>2. Collect and clean domain data.</li>
+                    <li>3. Train and evaluate with proper validation.</li>
+                    <li>4. Deploy into a workflow with human oversight.</li>
+                    <li>5. Monitor, retrain, and document failures.</li>
+                </ul>
+                <p class="math-note">If step 5 is missing, model quality will drift and trust will collapse over time.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="image-placeholder image-xl">Diagram Space: End-to-End Applied ML Lifecycle (All Domains)</div>
+                <figcaption>Use one big lifecycle visual so readers recognize shared structure across disciplines.</figcaption>
+            </figure>
+        </section>
 
-                <label class="label" for="editor-focus">Focus Areas</label>
-                <input id="editor-focus" type="text" name="focus" required placeholder="e.g., Science writing, Technical clarity, Accessibility..." />
+        <section class="card concept-section">
+            <h2>Keep Learning</h2>
+            <p class="section-copy">If this page made you curious, the next step is the resource library with curated paths for ML, AI, and domain-specific tracks.</p>
+            <div class="subpage-nav">
+                <a class="subpage-link" href="resources.html">Open Resources Library</a>
+            </div>
+        </section>
 
-                <label class="label" for="editor-availability">Weekly Availability</label>
-                <select id="editor-availability" name="availability" required>
-                    <option value="">Select an option</option>
-                    <option value="1-3">1-3 hours</option>
-                    <option value="3-5">3-5 hours</option>
-                    <option value="5-10">5-10 hours</option>
-                    <option value="10+">10+ hours</option>
-                </select>
-
-                <input class="btn btn-primary" type="submit" value="Submit Application" />
-            </form>
+        <section class="card">
+            <h2>Want to Contribute?</h2>
+            <p class="section-copy">Guest writer/editor applications are on a separate page.</p>
+            <div class="subpage-nav">
+                <a class="subpage-link" href="contributor-applications.html">Open Contributor Applications</a>
+            </div>
         </section>
     </main>
-
-    <script>
-        function showSection(roleId) {
-            const guestWriter = document.getElementById('guest-writer');
-            const editor = document.getElementById('editor');
-            
-            if (roleId === 'guest-writer') {
-                guestWriter.hidden = false;
-                editor.hidden = true;
-            } else if (roleId === 'editor') {
-                guestWriter.hidden = true;
-                editor.hidden = false;
-            }
-        }
-    </script>
 </body>
 </html>

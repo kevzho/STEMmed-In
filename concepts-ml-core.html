@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Part 2: Core Machine Learning - STEMmed In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="theme.js"></script>
+</head>
+<body>
+    <main class="page-wrap">
+        <section class="card hero-card">
+            <nav class="top-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="concepts.html">Concepts Explained</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="contributor-applications.html">Contribute</a>
+                <button class="theme-toggle" type="button" data-theme-toggle>Light Mode</button>
+            </nav>
+            <p class="eyebrow">Part 2</p>
+            <h1>The Core of Machine Learning</h1>
+            <p class="hero-copy">This is the "how models actually work" page. We keep the language direct, define terms quickly, and focus on practical intuition.</p>
+            <div class="subpage-nav">
+                <a class="subpage-link" href="concepts.html">Back to Roadmap</a>
+                <a class="subpage-link" href="concepts-fundamentals.html">Previous: Fundamentals</a>
+                <a class="subpage-link" href="concepts-deep-learning.html">Next: Deep Learning</a>
+            </div>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Quick Glossary (Before We Start)</h2>
+            <div class="glossary-grid">
+                <article class="glossary-item">
+                    <h3>Model</h3>
+                    <p>A function that maps inputs to predictions.</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Parameter</h3>
+                    <p>Values learned during training (like weights).</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Hyperparameter</h3>
+                    <p>Settings you choose before training (like tree depth, learning rate).</p>
+                </article>
+                <article class="glossary-item">
+                    <h3>Generalization</h3>
+                    <p>How well the model performs on new, unseen data.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Train / Validation / Test and Cross-Validation</h2>
+            <div class="learning-block">
+                <h3>Why We Split Data</h3>
+                <p>If you test a model on the same examples it studied, the score can look great for the wrong reason. You need unseen data to tell whether the model truly learned a pattern instead of memorizing.</p>
+                <p class="analogy"><strong>Analogy:</strong> Memorizing practice questions is not the same as understanding the chapter.</p>
+                <ul class="learning-list">
+                    <li><strong>Train set:</strong> where the model learns.</li>
+                    <li><strong>Validation set:</strong> where you tune settings and choose between models.</li>
+                    <li><strong>Test set:</strong> final exam, used once at the end.</li>
+                </ul>
+            </div>
+            <div class="learning-block">
+                <h3>Cross-Validation (When Data Is Limited)</h3>
+                <p>Cross-validation rotates which fold is held out. This gives a more reliable estimate than one random split, especially in smaller datasets.</p>
+                <p class="analogy"><strong>Analogy:</strong> Instead of one referee making the call, multiple referees rotate and you average their judgments.</p>
+            </div>
+            <figure class="image-slot">
+                <img class="concept-image concept-image-xl" src="img/cross-validation.png" alt="Diagram showing train, validation, test split and k-fold cross-validation workflow." />
+                <figcaption>Train/validation/test split and k-fold cross-validation: evaluate more reliably by rotating which fold is held out.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Core Supervised Models (Conversational Intuition)</h2>
+            <div class="learning-block">
+                <h3>Linear Regression</h3>
+                <p>Use this when your target is a number (price, demand, length of stay). It draws the best line through data to predict a continuous value.</p>
+                <p class="analogy"><strong>Analogy:</strong> You are fitting a ruler through scattered dots so the average miss is as small as possible.</p>
+                <p class="math-note">Basic form: <code>y = b0 + b1*x1 + b2*x2 + ...</code></p>
+            </div>
+            <div class="learning-block">
+                <h3>Logistic Regression</h3>
+                <p>Use this for yes/no predictions. It returns a probability (like 0.82 chance of fraud) and then you choose a threshold to convert that probability into a decision.</p>
+                <p class="analogy"><strong>Analogy:</strong> Think of a confidence meter. You decide at what confidence level to act.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Decision Trees</h3>
+                <p>Trees split data into branches using simple questions. They are very explainable, which is why people love them, but they can overfit when grown too deep.</p>
+                <p class="analogy"><strong>Analogy:</strong> A medical triage flowchart with yes/no branches.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Random Forest</h3>
+                <p>Random forest builds many trees and combines them. This often improves stability and accuracy compared to one tree.</p>
+                <p class="analogy"><strong>Analogy:</strong> One doctor can miss something; a panel discussion is usually more reliable.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="diagram-grid">
+                    <img class="concept-image concept-image-large" src="img/lin-log-reg.png" alt="Comparison of linear regression and logistic regression output behavior." />
+                    <img class="concept-image concept-image-large" src="img/random-forest.jpg" alt="Decision tree and random forest ensemble voting illustration." />
+                </div>
+                <figcaption>Left: linear vs logistic regression behavior. Right: random forest intuition as multiple trees voting together.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Reinforcement Learning and Unsupervised Learning</h2>
+            <div class="learning-block">
+                <h3>Unsupervised Learning</h3>
+                <p>Here you do not have labels. You ask the model to find structure, such as clusters or compressed representations.</p>
+                <p class="analogy"><strong>Analogy:</strong> You are sorting a box of mixed Lego pieces without any instructions.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Reinforcement Learning (RL)</h3>
+                <p>In RL, an agent learns by acting and receiving rewards or penalties. The goal is long-term strategy, not just immediate reward.</p>
+                <ul class="learning-list">
+                    <li><strong>State:</strong> the situation right now.</li>
+                    <li><strong>Action:</strong> what the agent can do.</li>
+                    <li><strong>Reward:</strong> immediate feedback.</li>
+                    <li><strong>Policy:</strong> the action strategy.</li>
+                </ul>
+                <p class="analogy"><strong>Analogy:</strong> Learning chess by playing many games, not by being given perfect move labels.</p>
+            </div>
+            <figure class="image-slot">
+                <img class="concept-image concept-image-large" src="img/rl-loop.ppm" alt="Reinforcement learning loop showing agent, environment, actions, and rewards." />
+                <figcaption>RL loop: the agent acts, gets feedback, and updates its strategy over time.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Metrics You Should Actually Understand</h2>
+            <div class="learning-block">
+                <h3>Precision and Recall</h3>
+                <p>Precision = of the things I flagged, how many were truly positive? Recall = of all true positives, how many did I catch? You usually trade one for the other by moving threshold.</p>
+                <p class="analogy"><strong>Analogy:</strong> Spam filter: strict filter catches more spam (high recall) but may block good emails (lower precision).</p>
+            </div>
+            <div class="learning-block">
+                <h3>ROC and AUC</h3>
+                <p>ROC curve shows the tradeoff between true positive rate and false positive rate across thresholds. AUC summarizes how well the model ranks positives above negatives overall.</p>
+                <p class="math-note">AUC near 0.5 means almost random ranking. AUC closer to 1.0 is stronger ranking ability.</p>
+            </div>
+            <figure class="image-slot">
+                <div class="diagram-grid">
+                    <img class="concept-image concept-image-large" src="img/precision-recall.png" alt="Precision-recall tradeoff chart across thresholds." />
+                    <img class="concept-image concept-image-large" src="img/roc-auc.png" alt="ROC curves and AUC comparison between models." />
+                </div>
+                <figcaption>Left: precision-recall tradeoff as threshold changes. Right: ROC curves and AUC to compare ranking quality.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card concept-section">
+            <h2>Bias-Variance, Gradient Descent, and Double Descent</h2>
+            <div class="learning-block">
+                <h3>Bias-Variance Tradeoff</h3>
+                <p>Too simple: misses patterns (high bias). Too flexible: learns noise (high variance). You want the middle where model complexity matches data complexity.</p>
+                <p class="analogy"><strong>Analogy:</strong> A suit can be too loose (bias) or too tailored to one posture (variance). Best fit is in-between.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Gradient Descent</h3>
+                <p>This is how many models learn. Compute the slope of error and step downhill to reduce it. Learning rate controls step size.</p>
+                <p class="analogy"><strong>Analogy:</strong> Hiking downhill in fog by feeling local slope with your feet.</p>
+            </div>
+            <div class="learning-block">
+                <h3>Double Descent (Why Bigger Models Sometimes Help)</h3>
+                <p>Older intuition said "bigger model always overfits more." Modern behavior can show a second improvement region where larger models generalize better again, depending on data and optimization setup.</p>
+                <p class="math-note">Do not treat this as a magic rule. It is a pattern seen in many modern settings, not all settings.</p>
+            </div>
+            <figure class="image-slot">
+                <img class="concept-image concept-image-xl" src="img/double-descent.png" alt="Double descent curve showing test error behavior as model complexity increases." />
+                <figcaption>Double descent: test error can rise and then improve again as model size increases.</figcaption>
+            </figure>
+        </section>
+
+        <section class="card">
+            <div class="subpage-nav">
+                <a class="subpage-link" href="concepts.html">Back to Roadmap</a>
+                <a class="subpage-link" href="concepts-fundamentals.html">Previous: Fundamentals</a>
+                <a class="subpage-link" href="concepts-deep-learning.html">Next: Deep Learning</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
