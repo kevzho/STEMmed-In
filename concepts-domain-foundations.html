@@ -49,8 +49,8 @@
             </div>
         </section>
 
-        <section class="card concept-section">
-            <h2>Physics Foundations</h2>
+	        <section class="card concept-section">
+	            <h2>Physics Foundations</h2>
             <div class="learning-block">
                 <h3>Math and Modeling Baseline</h3>
                 <p>Computational physics depends on linear algebra, differential equations, and numerical methods. These tools let you represent physical laws and simulate systems that are too complex to solve analytically.</p>
@@ -58,15 +58,15 @@
             <div class="learning-block">
                 <h3>Uncertainty and Inverse Problems</h3>
                 <p>Many tasks in physics infer hidden causes from observed effects, such as recovering material properties from sensor readings. This is an inverse problem and is usually uncertain. Probabilistic modeling and uncertainty quantification are therefore core requirements.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder">Image Spot: Forward vs Inverse Problem Diagram</div>
-                <figcaption>Show how known parameters produce measurements (forward) and how measurements are used to estimate unknown parameters (inverse).</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-xl" src="/img/img1_forward_inverse.png" alt="Forward vs inverse problem diagram showing how known parameters produce measurements (forward) and how measurements are used to estimate unknown parameters (inverse)." />
+	                <figcaption>Forward vs inverse problems: simulate measurements from known parameters (forward) vs infer unknown parameters from observed measurements (inverse).</figcaption>
+	            </figure>
+	        </section>
 
-        <section class="card concept-section">
-            <h2>Medicine Foundations</h2>
+	        <section class="card concept-section">
+	            <h2>Medicine Foundations</h2>
             <div class="learning-block">
                 <h3>Clinical Evidence Basics</h3>
                 <p>Medical AI must align with clinical evidence standards. Understand trial design, inclusion/exclusion criteria, endpoints, and how confounding variables can mislead conclusions.</p>
@@ -78,15 +78,15 @@
             <div class="learning-block">
                 <h3>Data Governance and Equity</h3>
                 <p>Protected health information requires strict privacy safeguards. Bias audits are mandatory because uneven representation can create harmful performance gaps across populations.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder">Image Spot: Confusion Matrix + Calibration Curve</div>
-                <figcaption>Pair a confusion matrix with a calibration plot to teach performance and reliability together.</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-xl" src="/img/img2_confusion_calibration.png" alt="Combined diagram showing a confusion matrix alongside a calibration curve to compare classification performance and probability reliability." />
+	                <figcaption>Performance + reliability together: confusion matrix counts for classification errors and a calibration curve comparing predicted probabilities to observed outcomes.</figcaption>
+	            </figure>
+	        </section>
 
-        <section class="card concept-section">
-            <h2>Finance Foundations</h2>
+	        <section class="card concept-section">
+	            <h2>Finance Foundations</h2>
             <div class="learning-block">
                 <h3>Time-Series Thinking</h3>
                 <p>Financial data is sequential and non-stationary. Regimes change, correlations shift, and noise is high. Models need robust validation that respects time order to avoid leakage.</p>
@@ -98,15 +98,15 @@
             <div class="learning-block">
                 <h3>Backtesting Discipline</h3>
                 <p>Backtests can look strong for the wrong reasons. You must control for look-ahead bias, survivorship bias, and overfitting to historical noise.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder">Image Spot: Backtest Timeline and Leakage Warning</div>
-                <figcaption>Use a timeline visual to show train/validation/test windows and where leakage often occurs.</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-xl" src="/img/img3_backtest_leakage.png" alt="Backtest timeline visual showing train, validation, and test windows over time and common data leakage pitfalls." />
+	                <figcaption>Backtesting timeline: rolling train/validation/test windows, plus common leakage pitfalls (look-ahead bias, survivorship bias, and overfitting).</figcaption>
+	            </figure>
+	        </section>
 
-        <section class="card concept-section">
-            <h2>Bio/Chem Foundations</h2>
+	        <section class="card concept-section">
+	            <h2>Bio/Chem Foundations</h2>
             <div class="learning-block">
                 <h3>Biological and Chemical Representations</h3>
                 <p>In computational biology, sequences, expression matrices, and interaction networks are common data forms. In chemistry, molecules may be represented as graphs, strings, or fingerprints. Representation choice heavily shapes model performance.</p>
@@ -118,17 +118,18 @@
             <div class="learning-block">
                 <h3>Practical Goal: Decision Support, Not Just Prediction</h3>
                 <p>Good models accelerate hypothesis generation, prioritize experiments, and reduce search space. The value is in guiding better experiments, not replacing them blindly.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder">Image Spot: Molecule Graph + Sequence Pipeline</div>
-                <figcaption>Add one panel for molecular graph representation and one for sequence-to-prediction workflow.</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-xl" src="/img/img4_molecule_pipeline.png" alt="Bio/chem representation diagram showing a molecule graph representation and a sequence-to-prediction pipeline." />
+	                <figcaption>Bio/chem representations: molecule-as-graph encoding and a sequence-to-property prediction pipeline from raw inputs to model outputs.</figcaption>
+	            </figure>
+	        </section>
 
         <section class="card">
             <div class="subpage-nav">
                 <a class="subpage-link" href="/concepts/">Back to Roadmap</a>
                 <a class="subpage-link" href="/concepts/advanced-applied/">Previous: Advanced + Applied</a>
+                <a class="subpage-link" href="/applications/index.html">Next: Applications Across Fields</a>
             </div>
         </section>
     </main>

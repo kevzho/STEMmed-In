@@ -45,8 +45,8 @@
             </div>
         </section>
 
-        <section class="card concept-section">
-            <h2>Medicine and Healthcare</h2>
+	        <section class="card concept-section">
+	            <h2>Medicine and Healthcare</h2>
             <div class="learning-block">
                 <h3>Where It Helps</h3>
                 <p>AI can help triage medical images, summarize clinical notes, predict readmission risk, and flag unusual patterns in patient monitoring streams. In most settings, it supports clinicians instead of replacing them.</p>
@@ -55,15 +55,15 @@
             <div class="learning-block">
                 <h3>What Makes It Hard</h3>
                 <p>Medical data is noisy, privacy-sensitive, and often biased by site-specific processes. A model that looks strong in one hospital may fail in another if patient populations differ.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder image-large">Diagram Space: Clinical AI Workflow (Input -> Model -> Clinician Decision -> Feedback)</div>
-                <figcaption>Include where humans review predictions and where performance is re-audited.</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-large" src="/img/d1_clinical_ai_workflow.png" alt="Clinical AI workflow showing patient data input, model inference, clinician decision support, and feedback loops for auditing and improvement." />
+	                <figcaption>Clinical AI workflow: patient data flows into a model, clinicians review outputs for decision support, and outcomes feed back into auditing and model updates.</figcaption>
+	            </figure>
+	        </section>
 
-        <section class="card concept-section">
-            <h2>Finance</h2>
+	        <section class="card concept-section">
+	            <h2>Finance</h2>
             <div class="learning-block">
                 <h3>Where It Helps</h3>
                 <p>Common use cases include fraud detection, risk scoring, anti-money-laundering alerts, customer churn prediction, and portfolio support tools.</p>
@@ -72,15 +72,15 @@
             <div class="learning-block">
                 <h3>What Makes It Hard</h3>
                 <p>Financial patterns shift with market regimes and user behavior. A strategy that worked in last year's data can degrade fast. Strong validation and monitoring are non-negotiable.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder image-large">Diagram Space: Fraud/Risk Pipeline with Alerts and Human Review</div>
-                <figcaption>Show feedback loop: analyst outcomes return to training data for retraining.</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-large" src="/img/d2_fraud_risk_pipeline.png" alt="Fraud and risk pipeline showing transaction data, feature processing, model scoring, alert queue, analyst review, and feedback to retraining." />
+	                <figcaption>Fraud/risk pipeline: transactions are scored by a model, suspicious cases go to an alert queue for analyst review, and confirmed outcomes become feedback for retraining.</figcaption>
+	            </figure>
+	        </section>
 
-        <section class="card concept-section">
-            <h2>Biology and Chemistry</h2>
+	        <section class="card concept-section">
+	            <h2>Biology and Chemistry</h2>
             <div class="learning-block">
                 <h3>Where It Helps</h3>
                 <p>AI is used for sequence analysis, protein structure tasks, molecule property prediction, lead prioritization, and experiment recommendation.</p>
@@ -89,15 +89,15 @@
             <div class="learning-block">
                 <h3>What Makes It Hard</h3>
                 <p>Wet-lab data can be sparse, expensive, and noisy. Predictions need experimental confirmation, so the goal is often "better experiment planning" not blind automation.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder image-large">Diagram Space: Molecule/Sequence -> Model -> Candidate Ranking -> Lab Validation</div>
-                <figcaption>Show clearly where computational prediction hands off to real experiments.</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-large" src="/img/d3_molecule_ranking.png" alt="Drug discovery pipeline showing molecule or sequence inputs, model predictions, candidate ranking, and wet-lab validation with feedback." />
+	                <figcaption>Bio/chem pipeline: molecules or sequences go through a predictive model, candidates are ranked, and top picks are validated in the lab before looping results back into the dataset.</figcaption>
+	            </figure>
+	        </section>
 
-        <section class="card concept-section">
-            <h2>Physics and Engineering</h2>
+	        <section class="card concept-section">
+	            <h2>Physics and Engineering</h2>
             <div class="learning-block">
                 <h3>Where It Helps</h3>
                 <p>Applications include surrogate models for simulation, sensor anomaly detection, inverse problems, and control optimization in complex systems.</p>
@@ -106,15 +106,15 @@
             <div class="learning-block">
                 <h3>What Makes It Hard</h3>
                 <p>Physical systems often have strict constraints. Predictions must remain physically plausible, not just statistically accurate.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder image-large">Diagram Space: Simulation Loop + ML Surrogate + Physics Constraints</div>
-                <figcaption>Include where domain equations are used to validate model outputs.</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-large" src="/img/d4_simulation_loop.png" alt="Physics and engineering workflow showing simulation data, training an ML surrogate model, applying physics constraints, and validating outputs in a loop." />
+	                <figcaption>Simulation + surrogate modeling: run or sample simulations, train an ML surrogate for speed, enforce physics constraints, and validate outputs before iterating.</figcaption>
+	            </figure>
+	        </section>
 
-        <section class="card concept-section">
-            <h2>Cross-Domain Pattern You Will See Everywhere</h2>
+	        <section class="card concept-section">
+	            <h2>Cross-Domain Pattern You Will See Everywhere</h2>
             <div class="learning-block">
                 <p>Whether in medicine, finance, biology, or physics, the pattern is similar:</p>
                 <ul class="learning-list">
@@ -125,12 +125,12 @@
                     <li>5. Monitor, retrain, and document failures.</li>
                 </ul>
                 <p class="math-note">If step 5 is missing, model quality will drift and trust will collapse over time.</p>
-            </div>
-            <figure class="image-slot">
-                <div class="image-placeholder image-xl">Diagram Space: End-to-End Applied ML Lifecycle (All Domains)</div>
-                <figcaption>Use one big lifecycle visual so readers recognize shared structure across disciplines.</figcaption>
-            </figure>
-        </section>
+	            </div>
+	            <figure class="image-slot">
+	                <img class="concept-image concept-image-xl" src="/img/d5_ml_lifecycle.png" alt="End-to-end applied ML lifecycle showing problem definition, data collection, training and evaluation, deployment, monitoring, and retraining." />
+	                <figcaption>End-to-end applied ML lifecycle: define the decision, build the dataset, train/evaluate, deploy into a real workflow, then monitor drift and retrain as conditions change.</figcaption>
+	            </figure>
+	        </section>
 
         <section class="card concept-section">
             <h2>Keep Learning</h2>

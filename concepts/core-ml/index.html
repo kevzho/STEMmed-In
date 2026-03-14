@@ -69,7 +69,7 @@
             </div>
             <figure class="image-slot">
                 <img class="concept-image concept-image-xl" src="/img/cross-validation.png" alt="Diagram showing train, validation, test split and k-fold cross-validation workflow." />
-                <figcaption>Train/validation/test split and k-fold cross-validation: evaluate more reliably by rotating which fold is held out.</figcaption>
+                <figcaption>Hold-out split vs k-fold cross-validation: rotate the held-out fold and average results for a more reliable estimate.</figcaption>
             </figure>
         </section>
 
@@ -101,7 +101,7 @@
                     <img class="concept-image concept-image-large" src="/img/lin-log-reg.png" alt="Comparison of linear regression and logistic regression output behavior." />
                     <img class="concept-image concept-image-large" src="/img/random-forest.jpg" alt="Decision tree and random forest ensemble voting illustration." />
                 </div>
-                <figcaption>Left: linear vs logistic regression behavior. Right: random forest intuition as multiple trees voting together.</figcaption>
+                <figcaption>Left: linear regression predicts a continuous line; logistic regression maps inputs to a probability curve. Right: random forest combines many decision trees by voting/averaging to improve stability.</figcaption>
             </figure>
         </section>
 
@@ -125,7 +125,7 @@
             </div>
             <figure class="image-slot">
                 <img class="concept-image concept-image-large" src="/img/rl-loop.ppm" alt="Reinforcement learning loop showing agent, environment, actions, and rewards." />
-                <figcaption>RL loop: the agent acts, gets feedback, and updates its strategy over time.</figcaption>
+                <figcaption>Reinforcement learning loop: observe state → take action → receive reward and next state → update the policy.</figcaption>
             </figure>
         </section>
 
@@ -146,7 +146,7 @@
                     <img class="concept-image concept-image-large" src="/img/precision-recall.png" alt="Precision-recall tradeoff chart across thresholds." />
                     <img class="concept-image concept-image-large" src="/img/roc-auc.png" alt="ROC curves and AUC comparison between models." />
                 </div>
-                <figcaption>Left: precision-recall tradeoff as threshold changes. Right: ROC curves and AUC to compare ranking quality.</figcaption>
+                <figcaption>Left: precision–recall curve across thresholds (especially informative with class imbalance). Right: ROC curve (TPR vs FPR) with AUC as an overall ranking summary.</figcaption>
             </figure>
         </section>
 
@@ -169,7 +169,7 @@
             </div>
             <figure class="image-slot">
                 <img class="concept-image concept-image-xl" src="/img/double-descent.png" alt="Double descent curve showing test error behavior as model complexity increases." />
-                <figcaption>Double descent: test error can rise and then improve again as model size increases.</figcaption>
+                <figcaption>Double descent: test error vs model capacity can peak near interpolation, then improve again for larger models under some training regimes.</figcaption>
             </figure>
         </section>
 
